@@ -36,8 +36,8 @@ class PalHomeScene: SKScene {
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "living-room")
         let padding = 75.0
-        let backgroundPos = CGPoint(x: (size.width / 2), y: (size.height - padding) / 2)
-        let bacgkroundSize = CGSize(width: size.width, height: size.height - padding)
+        let backgroundPos = CGPoint(x: (size.width / 2), y: (size.height) / 2)
+        let bacgkroundSize = CGSize(width: size.width, height: size.height)
         
         background.zPosition = 0
         background.position = backgroundPos
@@ -113,7 +113,7 @@ extension PalHomeScene {
     func configurePal() {
         guard let store = palStore else { return }
         
-        let palSize = CGSize(width: frame.width, height: frame.width / 1.25)
+        let palSize = CGSize(width: frame.width * 0.75, height: frame.width * 0.75 / 1.25)
         palNode = PalNodeV2(imageNamed: getTextureName(stage: 0, palState: store.palState), size: palSize)
         palNode.position = CGPoint(x: frame.maxX / 2, y: frame.maxY / 2)
         
@@ -148,13 +148,13 @@ extension PalHomeScene {
         self.thirdBarContainer = thirdBarContainer
         
         // initialize activity bars
-        firstBar = getActivityBar(color: UIColor(hue: 0.001, saturation: 0.693, brightness: 0.755, alpha: 1))
+        firstBar = getActivityBar(color: UIColor(hue: 0.008, saturation: 0.651, brightness: 1.0, alpha: 1))
         firstBar.position = firstBarContainer.position
         addChild(firstBar)
-        secondBar = getActivityBar(color: UIColor(hue: 0.332, saturation: 0.869, brightness: 0.674, alpha: 1))
+        secondBar = getActivityBar(color: UIColor(hue: 0.326, saturation: 0.574, brightness: 0.997, alpha: 1))
         secondBar.position = secondBarContainer.position
         addChild(secondBar)
-        thirdBar = getActivityBar(color: UIColor(hue: 0.619, saturation: 0.869, brightness: 0.674, alpha: 1))
+        thirdBar = getActivityBar(color: UIColor(hue: 0.619, saturation: 0.714, brightness: 1.0, alpha: 1))
         thirdBar.position = thirdBarContainer.position
         addChild(thirdBar)
     }

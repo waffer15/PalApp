@@ -48,7 +48,7 @@ struct Home: View {
             
         }
         .frame(maxWidth: .infinity)
-        .background(Color(hue: 0.619, saturation: 0.0, brightness: 0.925))
+        .background(Color(hue: 0.326, saturation: 0.0, brightness: 0.819))
     }
 }
 
